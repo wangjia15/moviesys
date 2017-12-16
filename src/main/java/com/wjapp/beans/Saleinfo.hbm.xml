@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 2017-7-14 15:45:30 by Hibernate Tools 5.2.3.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="moviedb" dynamic-insert="false" dynamic-update="false" mutable="true" name="com.wjapp.beans.Saleinfo" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="saleinfo">
+        <id name="saleId" type="java.lang.Integer">
+            <column name="sale_id"/>
+            <generator class="identity"/>
+        </id>
+        <many-to-one class="com.wjapp.beans.Customer" embed-xml="true" fetch="select" insert="true" name="customer" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="customer_id" not-null="true"/>
+        </many-to-one>
+        <many-to-one class="com.wjapp.beans.Schedule" embed-xml="true" fetch="select" insert="true" name="schedule" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="schedule_id" not-null="true"/>
+        </many-to-one>
+        <many-to-one class="com.wjapp.beans.Staff" embed-xml="true" fetch="select" insert="true" name="staff" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="staff_id" not-null="true"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="salelDate" optimistic-lock="true" type="timestamp" unique="false">
+            <column length="19" name="salel_date" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="ticketDate" optimistic-lock="true" type="timestamp" unique="false">
+            <column length="19" name="ticket_date"/>
+        </property>
+        <property generated="never" lazy="false" name="ticketType" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="ticket_type"/>
+        </property>
+        <property generated="never" lazy="false" name="ticketNumber" optimistic-lock="true" type="java.lang.Byte" unique="false">
+            <column name="ticket_number"/>
+        </property>
+        <property generated="never" lazy="false" name="seatNo" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="seat_no"/>
+        </property>
+        <property generated="never" lazy="false" name="lastUpdate" optimistic-lock="true" type="timestamp" unique="false">
+            <column length="19" name="last_update" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="isprintTicket" optimistic-lock="true" type="java.lang.Boolean" unique="false">
+            <column name="isprint_ticket"/>
+        </property>
+        <property generated="never" lazy="false" name="isplayment" optimistic-lock="true" type="java.lang.Boolean" unique="false">
+            <column name="isplayment"/>
+        </property>
+        <property generated="never" lazy="false" name="totalPrice" optimistic-lock="true" type="java.lang.Long" unique="false">
+            <column name="total_price" precision="10" scale="0"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="payments" optimistic-lock="true" sort="unsorted" table="payment">
+            <key on-delete="noaction">
+                <column name="sale_id"/>
+            </key>
+            <one-to-many class="com.wjapp.beans.Payment" embed-xml="true" not-found="exception"/>
+        </set>
+    </class>
+</hibernate-mapping>

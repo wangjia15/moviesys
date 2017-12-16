@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+	<table-filter match-name="actor" match-catalog="moviedb"></table-filter>
+	<table-filter match-name="actor_info" match-catalog="moviedb"></table-filter>
+	<table-filter match-name="address" match-catalog="moviedb"></table-filter>
+	<table-filter match-name="category" match-catalog="moviedb"></table-filter>
+	<table-filter match-name="city" match-catalog="moviedb"></table-filter>
+	<table-filter match-name="country" match-catalog="moviedb"></table-filter>
+	<table-filter match-name="customer" match-catalog="moviedb"></table-filter>
+	<table-filter match-name="customer_list" match-catalog="moviedb"></table-filter>
+	<table-filter match-name="film" match-catalog="moviedb"></table-filter>
+	<table-filter match-name="film_actor" match-catalog="moviedb"></table-filter>
+	<table-filter match-name="film_category" match-catalog="moviedb"></table-filter>
+	<table-filter match-name="film_text" match-catalog="moviedb"></table-filter>
+	<table-filter match-name="hall" match-catalog="moviedb"></table-filter>
+	<table-filter match-name="language" match-catalog="moviedb"></table-filter>
+	<table-filter match-name="payment" match-catalog="moviedb"></table-filter>
+	<table-filter match-name="playdata" match-catalog="moviedb"></table-filter>
+	<table-filter match-name="saleinfo" match-catalog="moviedb"></table-filter>
+	<table-filter match-name="schedule" match-catalog="moviedb"></table-filter>
+	<table-filter match-name="seat" match-catalog="moviedb"></table-filter>
+	<table-filter match-name="staff" match-catalog="moviedb"></table-filter>
+	<table-filter match-name="store" match-catalog="moviedb"></table-filter>
+	<table-filter match-name="user" match-catalog="moviedb"></table-filter>
+</hibernate-reverse-engineering>

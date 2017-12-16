@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 2017-7-14 15:45:30 by Hibernate Tools 5.2.3.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="moviedb" dynamic-insert="false" dynamic-update="false" mutable="true" name="com.wjapp.beans.Seat" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="seat">
+        <id name="seatId" type="java.lang.Byte">
+            <column name="seat_id"/>
+            <generator class="identity"/>
+        </id>
+        <many-to-one class="com.wjapp.beans.Schedule" embed-xml="true" fetch="select" insert="true" name="schedule" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="schedule_id"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="row" optimistic-lock="true" type="java.lang.Byte" unique="false">
+            <column name="row"/>
+        </property>
+        <property generated="never" lazy="false" name="column" optimistic-lock="true" type="java.lang.Byte" unique="false">
+            <column name="column"/>
+        </property>
+        <property generated="never" lazy="false" name="type" optimistic-lock="true" type="string" unique="false">
+            <column length="8" name="type"/>
+        </property>
+    </class>
+</hibernate-mapping>

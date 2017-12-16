@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC
+        "-//Apache Struts//XWork Validator 1.0.2//EN"
+        "http://struts.apache.org/dtds/xwork-validator-1.0.2.dtd"> 
+
+<validators>
+<field name="actor.firstName">
+<field-validator type="requiredstring">
+<message>演员姓氏不能为空</message>
+</field-validator>
+</field>
+
+<field name="actor.lastName">
+<field-validator type="requiredstring">
+<message>演员名称不能为空</message>
+</field-validator>
+</field>
+</validators>

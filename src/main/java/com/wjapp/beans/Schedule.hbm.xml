@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 2017-7-14 15:45:30 by Hibernate Tools 5.2.3.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="moviedb" dynamic-insert="false" dynamic-update="false" mutable="true" name="com.wjapp.beans.Schedule" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="schedule">
+        <id name="scheduleId" type="java.lang.Integer">
+            <column name="schedule_id"/>
+            <generator class="identity"/>
+        </id>
+        <many-to-one class="com.wjapp.beans.Hall" embed-xml="true" fetch="select" insert="true" name="hall" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="hall_id"/>
+        </many-to-one>
+        <many-to-one class="com.wjapp.beans.Playdata" embed-xml="true" fetch="select" insert="true" name="playdata" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="playdata_id"/>
+        </many-to-one>
+        <many-to-one class="com.wjapp.beans.Staff" embed-xml="true" fetch="select" insert="true" name="staff" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="staff_id"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="playtime" optimistic-lock="true" type="time" unique="false">
+            <column length="8" name="playtime"/>
+        </property>
+        <property generated="never" lazy="false" name="price" optimistic-lock="true" type="java.lang.Long" unique="false">
+            <column name="price" precision="10" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="steatStandby" optimistic-lock="true" type="java.lang.Byte" unique="false">
+            <column name="steatStandby"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="saleinfos" optimistic-lock="true" sort="unsorted" table="saleinfo">
+            <key on-delete="noaction">
+                <column name="schedule_id" not-null="true"/>
+            </key>
+            <one-to-many class="com.wjapp.beans.Saleinfo" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="seats" optimistic-lock="true" sort="unsorted" table="seat">
+            <key on-delete="noaction">
+                <column name="schedule_id"/>
+            </key>
+            <one-to-many class="com.wjapp.beans.Seat" embed-xml="true" not-found="exception"/>
+        </set>
+    </class>
+</hibernate-mapping>
